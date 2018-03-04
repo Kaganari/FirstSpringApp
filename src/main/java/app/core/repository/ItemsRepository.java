@@ -1,6 +1,6 @@
-package core.repository;
+package app.core.repository;
 
-import core.model.Item;
+import app.core.model.Item;
 
 import java.util.List;
 
@@ -16,12 +16,6 @@ public interface ItemsRepository {
      */
     Item create(String name);
 
-    /**
-     * Changes the existing item
-     * @param id item's id
-     * @return changed item
-     */
-    Item update(int id);
 
     /**
      * Changes the existing item

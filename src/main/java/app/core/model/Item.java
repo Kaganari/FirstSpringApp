@@ -1,8 +1,7 @@
-package core.model;
+package app.core.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 
 /**
  * Created by User on 26.02.2018.
@@ -18,7 +17,7 @@ public class Item {
         this.name = name;
     }
 
-    public long getID (){
+    public int getId (){
         return id;
     }
 
@@ -28,6 +27,6 @@ public class Item {
 
     @Override
     public boolean equals(Object o) {
-        return (this.id == ((Item) o).getID() && this.name.equals(((Item) o).getName()));
+        return (this.id == ((Item) o).getId() && this.name.equals(((Item) o).getName()));
     }
 }

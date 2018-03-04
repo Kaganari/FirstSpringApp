@@ -1,6 +1,6 @@
-package core.repository;
+package app.core.repository;
 
-import core.model.Item;
+import app.core.model.Item;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,11 +37,6 @@ public class SampleItemsRepository implements ItemsRepository {
     }
 
     @Override
-    public Item update(final int id) {
-        return null;
-    }
-
-    @Override
     public Item update(final Item item) {
         return null;
     }
@@ -54,7 +49,7 @@ public class SampleItemsRepository implements ItemsRepository {
     @Override
     public Item getItemById(final int id) {
         for (Item item : items) {
-            if (item.getID() == id) {
+            if (item.getId() == id) {
                 return item;
             }
         }

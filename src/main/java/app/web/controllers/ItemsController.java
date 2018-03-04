@@ -1,7 +1,7 @@
-package web.controllers;
+package app.web.controllers;
 
-import core.model.Item;
-import core.repository.ItemsRepository;
+import app.core.model.Item;
+import app.core.repository.ItemsRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +36,7 @@ public class ItemsController {
     public ResponseEntity<Item> create(@RequestBody Item item) {
         Item createdItem = itemsRepository.create(item.getName());
         URI location = UriComponentsBuilder.fromPath("/items/")
-                .path(String.valueOf(createdItem.getID()))
+                .path(String.valueOf(createdItem.getId()))
                 .build().toUri();
         return ResponseEntity.created(location).body(createdItem);
     }
