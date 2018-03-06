@@ -21,11 +21,12 @@ public class ItemController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Item> get(@PathVariable int id) {
-        Item result = itemsRepository.getItemById(id);
-        if (result == null) {
-            return ResponseEntity.notFound().build();
-        } else {
+        try {
+            Item result = itemsRepository.getItemById(id);
             return ResponseEntity.ok(result);
+        }
+        catch (Exception e){
+            return ResponseEntity.notFound().build();
         }
     }
 
